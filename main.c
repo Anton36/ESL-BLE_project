@@ -405,11 +405,11 @@ static void advertising_init(void)
 {
     ret_code_t err_code;
     ble_advertising_init_t init;
-    //Структура для вставки имени в  Advertising пакет через служебное поле информации
+    // Структура для вставки имени в  Advertising пакет через служебное поле информации
 
     ble_advdata_manuf_data_t short_name_payload;
     uint8_array_t short_name_to_payload;
-     //Структура для вставки полного имени в Scan Response пакет через служебное поле информации
+    // Структура для вставки полного имени в Scan Response пакет через служебное поле информации
     ble_advdata_manuf_data_t full_name_payload;
     uint8_array_t full_name_to_payload;
 
@@ -425,7 +425,7 @@ static void advertising_init(void)
     full_name_to_payload.p_data = full_user_name;
     full_name_payload.data = full_name_to_payload;
     
-    //Иницализация пакета Advertising
+    // Иницализация пакета Advertising
     init.advdata.name_type = BLE_ADVDATA_NO_NAME;
     init.advdata.include_appearance = true;
     init.advdata.flags = BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE;
@@ -433,7 +433,7 @@ static void advertising_init(void)
     init.advdata.uuids_complete.p_uuids = m_adv_uuids;
     init.advdata.p_manuf_specific_data = &short_name_payload;
      
-    //Иницализация пакета Scan Response
+    // Иницализация пакета Scan Response
     init.srdata.name_type = BLE_ADVDATA_FULL_NAME;
     init.srdata.include_appearance = true;
     init.srdata.flags = BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE;
